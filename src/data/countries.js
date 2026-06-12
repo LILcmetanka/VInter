@@ -1,0 +1,196 @@
+export const countries = [
+  {
+    id: "japan",
+    name: {
+      ru: "Япония",
+      en: "Japan",
+      es: "Japón",
+      fr: "Japon",
+    },
+    flag: "🇯🇵",
+    capital: {
+      ru: "Токио",
+      en: "Tokyo",
+      es: "Tokio",
+      fr: "Tokyo",
+    },
+    population: 125700000,
+    area: 377975,
+    currency: "JPY",
+    language: {
+      ru: "Японский",
+      en: "Japanese",
+      es: "Japonés",
+      fr: "Japonais",
+    },
+    bestTime: {
+      ru: "Март-май, Сентябрь-ноябрь",
+      en: "March-May, September-November",
+      es: "Marzo-Mayo, Septiembre-Noviembre",
+      fr: "Mars-Mai, Septembre-Novembre",
+    },
+    budget: 100,
+    rating: 4.8,
+    reviews: 2450,
+    description: {
+      ru: "Страна восходящего солнца, где древние традиции встречаются с современными технологиями",
+      en: "Land of the rising sun, where ancient traditions meet modern technology",
+      es: "Tierra del sol naciente, donde las tradiciones antiguas se encuentran con la tecnología moderna",
+      fr: "Pays du soleil levant, où les traditions anciennes rencontrent la technologie moderne",
+    },
+    attractions: [
+      { ru: "Гора Фудзи", en: "Mount Fuji", es: "Monte Fuji", fr: "Mont Fuji" },
+      {
+        ru: "Храмы Киото",
+        en: "Kyoto Temples",
+        es: "Templos de Kioto",
+        fr: "Temples de Kyoto",
+      },
+      {
+        ru: "Токийская башня",
+        en: "Tokyo Tower",
+        es: "Torre de Tokio",
+        fr: "Tour de Tokyo",
+      },
+    ],
+    phrases: {
+      hello: {
+        ru: "Коннитива",
+        en: "Konnichiwa",
+        es: "Konnichiwa",
+        fr: "Konnichiwa",
+      },
+      thankYou: { ru: "Аригато", en: "Arigato", es: "Arigato", fr: "Arigato" },
+      goodbye: {
+        ru: "Саёнара",
+        en: "Sayonara",
+        es: "Sayonara",
+        fr: "Sayonara",
+      },
+    },
+  },
+  {
+    id: "italy",
+    name: {
+      ru: "Италия",
+      en: "Italy",
+      es: "Italia",
+      fr: "Italie",
+    },
+    flag: "🇮🇹",
+    capital: {
+      ru: "Рим",
+      en: "Rome",
+      es: "Roma",
+      fr: "Rome",
+    },
+    population: 60360000,
+    area: 301340,
+    currency: "EUR",
+    language: {
+      ru: "Итальянский",
+      en: "Italian",
+      es: "Italiano",
+      fr: "Italien",
+    },
+    bestTime: {
+      ru: "Апрель-июнь, Сентябрь-октябрь",
+      en: "April-June, September-October",
+      es: "Abril-Junio, Septiembre-Octubre",
+      fr: "Avril-Juin, Septembre-Octobre",
+    },
+    budget: 80,
+    rating: 4.7,
+    reviews: 3120,
+    description: {
+      ru: "Родина Римской империи, искусства Возрождения и самой вкусной кухни в мире",
+      en: "Birthplace of the Roman Empire, Renaissance art, and the most delicious cuisine in the world",
+      es: "Cuna del Imperio Romano, el arte del Renacimiento y la cocina más deliciosa del mundo",
+      fr: "Berceau de l'Empire romain, de l'art de la Renaissance et de la cuisine la plus délicieuse du monde",
+    },
+    attractions: [
+      { ru: "Колизей", en: "Colosseum", es: "Coliseo", fr: "Colisée" },
+      { ru: "Венеция", en: "Venice", es: "Venecia", fr: "Venise" },
+      { ru: "Ватикан", en: "Vatican", es: "Vaticano", fr: "Vatican" },
+    ],
+    phrases: {
+      hello: { ru: "Чао", en: "Ciao", es: "Ciao", fr: "Ciao" },
+      thankYou: { ru: "Грации", en: "Grazie", es: "Grazie", fr: "Grazie" },
+      goodbye: {
+        ru: "Арриведерчи",
+        en: "Arrivederci",
+        es: "Arrivederci",
+        fr: "Arrivederci",
+      },
+    },
+  },
+  {
+    id: "france",
+    name: {
+      ru: "Франция",
+      en: "France",
+      es: "Francia",
+      fr: "France",
+    },
+    flag: "🇫🇷",
+    capital: {
+      ru: "Париж",
+      en: "Paris",
+      es: "París",
+      fr: "Paris",
+    },
+    population: 67390000,
+    area: 640679,
+    currency: "EUR",
+    language: {
+      ru: "Французский",
+      en: "French",
+      es: "Francés",
+      fr: "Français",
+    },
+    bestTime: {
+      ru: "Апрель-июнь, Сентябрь-октябрь",
+      en: "April-June, September-October",
+      es: "Abril-Junio, Septiembre-Octubre",
+      fr: "Avril-Juin, Septembre-Octobre",
+    },
+    budget: 90,
+    rating: 4.6,
+    reviews: 2890,
+    description: {
+      ru: "Страна любви, моды, вина и изысканной кухни",
+      en: "Country of love, fashion, wine, and exquisite cuisine",
+      es: "País del amor, la moda, el vino y la cocina exquisita",
+      fr: "Pays de l'amour, de la mode, du vin et de la cuisine exquise",
+    },
+    attractions: [
+      {
+        ru: "Эйфелева башня",
+        en: "Eiffel Tower",
+        es: "Torre Eiffel",
+        fr: "Tour Eiffel",
+      },
+      { ru: "Лувр", en: "Louvre", es: "Louvre", fr: "Louvre" },
+      {
+        ru: "Замок Версаль",
+        en: "Versailles Palace",
+        es: "Palacio de Versalles",
+        fr: "Château de Versailles",
+      },
+    ],
+    phrases: {
+      hello: { ru: "Бонжур", en: "Bonjour", es: "Bonjour", fr: "Bonjour" },
+      thankYou: { ru: "Мерси", en: "Merci", es: "Merci", fr: "Merci" },
+      goodbye: {
+        ru: "Орёвуар",
+        en: "Au revoir",
+        es: "Au revoir",
+        fr: "Au revoir",
+      },
+    },
+  },
+];
+
+export function getCountryById(id) {
+  return countries.find((c) => c.id === id);
+}

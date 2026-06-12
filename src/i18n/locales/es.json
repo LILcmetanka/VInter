@@ -1,0 +1,87 @@
+{
+  "app": {
+    "title": "Guía de Viaje",
+    "subtitle": "Descubre el mundo de los viajes",
+    "nav": {
+      "home": "Inicio",
+      "countries": "Países",
+      "about": "Acerca de"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Explora el Mundo",
+      "subtitle": "Tu guía a los mejores destinos del planeta",
+      "cta": "Comenzar Viaje"
+    },
+    "features": {
+      "title": "¿Por qué Travel Guide?",
+      "cards": {
+        "guide": {
+          "title": "Guías Detalladas",
+          "description": "Información completa sobre cada país"
+        },
+        "languages": {
+          "title": "Multilingüe",
+          "description": "Información en 4 idiomas"
+        },
+        "currency": {
+          "title": "Monedas y Fechas",
+          "description": "Formato automático"
+        }
+      }
+    }
+  },
+  "countries": {
+    "title": "Países del Mundo",
+    "search": "Buscar país...",
+    "population": "Población",
+    "area": "Área",
+    "capital": "Capital",
+    "language": "Idioma",
+    "currency": "Moneda",
+    "bestTime": "Mejor época para visitar",
+    "attractions": "Atracciones",
+    "phrases": "Frases Útiles",
+    "budget": "Presupuesto diario",
+    "rating": "Calificación",
+    "reviews": "reseñas",
+    "viewDetails": "Ver Detalles"
+  },
+  "country": {
+    "back": "Volver a la lista",
+    "overview": "Descripción general",
+    "facts": "Hechos",
+    "travel": "Viaje",
+    "phrases": "Frases",
+    "population": "Población",
+    "area": "Área",
+    "gdp": "PIB per cápita",
+    "timezone": "Zona horaria",
+    "emergency": "Servicios de emergencia",
+    "visa": "Requisitos de visa",
+    "climate": "Clima"
+  },
+  "phrases": {
+    "hello": "Hola",
+    "thankYou": "Gracias",
+    "goodbye": "Adiós",
+    "please": "Por favor",
+    "yes": "Sí",
+    "no": "No",
+    "help": "Ayuda",
+    "howMuch": "¿Cuánto cuesta?"
+  },
+  "about": {
+    "title": "Acerca del Proyecto",
+    "description": "Travel Guide es un proyecto de demostración para aprender vue-i18n. El proyecto muestra todas las características principales de internacionalización.",
+    "features": "Características implementadas:",
+    "tech": "Tecnologías:"
+  },
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "notFound": "No encontrado",
+    "people": "{count} persona | {count} personas"
+  }
+}

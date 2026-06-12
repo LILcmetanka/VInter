@@ -1,0 +1,87 @@
+{
+  "app": {
+    "title": "Travel Guide",
+    "subtitle": "Discover the world of travel",
+    "nav": {
+      "home": "Home",
+      "countries": "Countries",
+      "about": "About"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Explore the World",
+      "subtitle": "Your guide to the best destinations on the planet",
+      "cta": "Start Journey"
+    },
+    "features": {
+      "title": "Why Travel Guide?",
+      "cards": {
+        "guide": {
+          "title": "Detailed Guides",
+          "description": "Comprehensive information about each country"
+        },
+        "languages": {
+          "title": "Multilingual",
+          "description": "Information in 4 languages"
+        },
+        "currency": {
+          "title": "Currencies & Dates",
+          "description": "Automatic formatting"
+        }
+      }
+    }
+  },
+  "countries": {
+    "title": "Countries of the World",
+    "search": "Search country...",
+    "population": "Population",
+    "area": "Area",
+    "capital": "Capital",
+    "language": "Language",
+    "currency": "Currency",
+    "bestTime": "Best time to visit",
+    "attractions": "Attractions",
+    "phrases": "Useful Phrases",
+    "budget": "Daily Budget",
+    "rating": "Rating",
+    "reviews": "reviews",
+    "viewDetails": "View Details"
+  },
+  "country": {
+    "back": "Back to list",
+    "overview": "Overview",
+    "facts": "Facts",
+    "travel": "Travel",
+    "phrases": "Phrases",
+    "population": "Population",
+    "area": "Area",
+    "gdp": "GDP per capita",
+    "timezone": "Timezone",
+    "emergency": "Emergency services",
+    "visa": "Visa requirements",
+    "climate": "Climate"
+  },
+  "phrases": {
+    "hello": "Hello",
+    "thankYou": "Thank you",
+    "goodbye": "Goodbye",
+    "please": "Please",
+    "yes": "Yes",
+    "no": "No",
+    "help": "Help",
+    "howMuch": "How much?"
+  },
+  "about": {
+    "title": "About Project",
+    "description": "Travel Guide is a demo project for learning vue-i18n. The project demonstrates all the main internationalization features.",
+    "features": "Implemented features:",
+    "tech": "Technologies:"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "notFound": "Not found",
+    "people": "{count} person | {count} people"
+  }
+}

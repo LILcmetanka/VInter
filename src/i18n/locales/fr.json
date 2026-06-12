@@ -1,0 +1,87 @@
+{
+  "app": {
+    "title": "Guide de Voyage",
+    "subtitle": "Découvrez le monde du voyage",
+    "nav": {
+      "home": "Accueil",
+      "countries": "Pays",
+      "about": "À propos"
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Explorez le Monde",
+      "subtitle": "Votre guide vers les meilleures destinations de la planète",
+      "cta": "Commencer le Voyage"
+    },
+    "features": {
+      "title": "Pourquoi Travel Guide?",
+      "cards": {
+        "guide": {
+          "title": "Guides Détaillés",
+          "description": "Informations complètes sur chaque pays"
+        },
+        "languages": {
+          "title": "Multilingue",
+          "description": "Informations en 4 langues"
+        },
+        "currency": {
+          "title": "Devises et Dates",
+          "description": "Formatage automatique"
+        }
+      }
+    }
+  },
+  "countries": {
+    "title": "Pays du Monde",
+    "search": "Rechercher un pays...",
+    "population": "Population",
+    "area": "Superficie",
+    "capital": "Capitale",
+    "language": "Langue",
+    "currency": "Devise",
+    "bestTime": "Meilleure période pour visiter",
+    "attractions": "Attractions",
+    "phrases": "Phrases Utiles",
+    "budget": "Budget quotidien",
+    "rating": "Évaluation",
+    "reviews": "avis",
+    "viewDetails": "Voir Détails"
+  },
+  "country": {
+    "back": "Retour à la liste",
+    "overview": "Aperçu",
+    "facts": "Faits",
+    "travel": "Voyage",
+    "phrases": "Phrases",
+    "population": "Population",
+    "area": "Superficie",
+    "gdp": "PIB par habitant",
+    "timezone": "Fuseau horaire",
+    "emergency": "Services d'urgence",
+    "visa": "Exigences de visa",
+    "climate": "Climat"
+  },
+  "phrases": {
+    "hello": "Bonjour",
+    "thankYou": "Merci",
+    "goodbye": "Au revoir",
+    "please": "S'il vous plaît",
+    "yes": "Oui",
+    "no": "Non",
+    "help": "Aide",
+    "howMuch": "Combien ça coûte?"
+  },
+  "about": {
+    "title": "À propos du Projet",
+    "description": "Travel Guide est un projet de démonstration pour apprendre vue-i18n. Le projet présente toutes les fonctionnalités principales de l'internationalisation.",
+    "features": "Fonctionnalités implémentées:",
+    "tech": "Technologies:"
+  },
+  "common": {
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "notFound": "Non trouvé",
+    "people": "{count} personne | {count} personnes"
+  }
+}
