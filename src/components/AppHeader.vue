@@ -10,6 +10,7 @@
         <router-link to="/countries" class="nav-link">{{
           t("app.nav.countries")
         }}</router-link>
+        <router-link to="/slots-demo" class="nav-link">🎰 Слоты</router-link>
         <router-link to="/about" class="nav-link">{{
           t("app.nav.about")
         }}</router-link>

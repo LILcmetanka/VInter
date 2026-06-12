@@ -1,14 +1,26 @@
 <template>
   <router-link
     :to="{ name: 'CountryDetail', params: { id: country.id } }"
-    class="country-card"
+    class="country-link"
   >
-    <div class="flag">{{ country.flag }}</div>
-    <div class="info">
-      <h3>{{ country.name[locale] }}</h3>
-      <p class="capital">
-        🏛️ {{ t("countries.capital") }}: {{ country.capital[locale] }}
-      </p>
+    <BaseCard hoverable clickable>
+      <!-- Слот image -->
+      <template #image>
+        <div class="flag-container">
+          <span class="flag">{{ country.flag }}</span>
+        </div>
+      </template>
+
+      <!-- Слот header -->
+      <template #header>
+        <div class="card-header">
+          <h3>{{ country.name[locale] }}</h3>
+          <div class="rating">⭐ {{ country.rating }}</div>
+        </div>
+      </template>
+
+      <!-- Default slot -->
+      <p class="capital">🏛️ {{ country.capital[locale] }}</p>
 
       <div class="stats">
         <div class="stat">
@@ -16,30 +28,27 @@
           <span class="value">{{ n(country.population, "decimal") }}</span>
         </div>
         <div class="stat">
-          <span class="label">📏 {{ t("countries.area") }}</span>
-          <span class="value">{{ n(country.area, "decimal") }} км²</span>
+          <span class="label">💰 {{ t("countries.budget") }}</span>
+          <span class="value budget">{{ n(country.budget, "currency") }}</span>
         </div>
       </div>
 
-      <div class="footer">
-        <div class="rating">
-          ⭐ {{ country.rating }} ({{ country.reviews }}
-          {{ t("countries.reviews") }})
+      <!-- Слот footer -->
+      <template #footer>
+        <div class="card-footer">
+          <span>{{ country.reviews }} {{ t("countries.reviews") }}</span>
+          <span class="arrow">→</span>
         </div>
-        <div class="budget">
-          💰 {{ n(country.budget, "currency") }}/{{
-            t("countries.budget").split(" ")[0]
-          }}
-        </div>
-      </div>
-    </div>
+      </template>
+    </BaseCard>
   </router-link>
 </template>
 
 <script setup>
 import { useI18n } from "vue-i18n";
+import BaseCard from "./base/BaseCard.vue";
 
-const props = defineProps({
+defineProps({
   country: {
     type: Object,
     required: true,
@@ -50,50 +59,53 @@ const { t, n, locale } = useI18n();
 </script>
 
 <style scoped>
-.country-card {
-  background: rgba(255, 255, 255, 0.95);
-  border-radius: 15px;
-  padding: 1.5rem;
+.country-link {
   text-decoration: none;
   color: inherit;
-  display: flex;
-  gap: 1.5rem;
-  transition: all 0.3s;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  display: block;
 }
 
-.country-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+.flag-container {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem;
+  text-align: center;
 }
 
 .flag {
-  font-size: 4rem;
+  font-size: 5rem;
+}
+
+.card-header {
+  padding: 1.5rem 1.5rem 0 1.5rem;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
 }
 
-.info {
-  flex: 1;
-}
-
-.info h3 {
-  margin: 0 0 0.5rem 0;
+.card-header h3 {
+  margin: 0;
   color: #667eea;
   font-size: 1.5rem;
 }
 
+.rating {
+  background: #fff3e0;
+  color: #ff9800;
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
 .capital {
   color: #666;
-  margin: 0 0 1rem 0;
-  font-size: 0.95rem;
+  margin: 0.5rem 0 1rem 0;
 }
 
 .stats {
   display: grid;
   gap: 0.5rem;
-  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
 .stat {
@@ -111,21 +123,27 @@ const { t, n, locale } = useI18n();
   color: #333;
 }
 
-.footer {
+.value.budget {
+  color: #4caf50;
+}
+
+.card-footer {
+  padding: 1rem 1.5rem;
+  background: #f8f9fa;
   display: flex;
   justify-content: space-between;
-  padding-top: 1rem;
-  border-top: 1px solid #e0e0e0;
+  align-items: center;
   font-size: 0.9rem;
+  color: #666;
 }
 
-.rating {
-  color: #ff9800;
-  font-weight: 600;
+.arrow {
+  font-size: 1.5rem;
+  color: #667eea;
+  transition: transform 0.3s;
 }
 
-.budget {
-  color: #4caf50;
-  font-weight: 600;
+.country-link:hover .arrow {
+  transform: translateX(5px);
 }
 </style>

@@ -17,152 +17,134 @@
       </div>
     </div>
 
-    <nav class="sub-nav">
-      <button
-        @click="activeTab = 'overview'"
-        :class="['tab-btn', { active: activeTab === 'overview' }]"
-      >
-        📖 {{ t("country.overview") }}
-      </button>
-      <button
-        @click="activeTab = 'facts'"
-        :class="['tab-btn', { active: activeTab === 'facts' }]"
-      >
-        📊 {{ t("country.facts") }}
-      </button>
-      <button
-        @click="activeTab = 'travel'"
-        :class="['tab-btn', { active: activeTab === 'travel' }]"
-      >
-        ✈️ {{ t("country.travel") }}
-      </button>
-      <button
-        @click="activeTab = 'phrases'"
-        :class="['tab-btn', { active: activeTab === 'phrases' }]"
-      >
-        💬 {{ t("country.phrases") }}
-      </button>
-    </nav>
+    <!-- Используем компонент Tabs со слотами -->
+    <Tabs :tabs="tabsData" default-tab="overview">
+      <!-- Слот overview -->
+      <template #overview="{ activeTab }">
+        <div class="tab-content">
+          <h2>{{ country.name[locale] }}</h2>
+          <p>{{ country.description[locale] }}</p>
 
-    <div class="content">
-      <!-- Overview -->
-      <div v-if="activeTab === 'overview'" class="tab-content">
-        <h2>{{ country.name[locale] }}</h2>
-        <p>{{ country.description[locale] }}</p>
+          <h3>{{ t("countries.attractions") }}</h3>
+          <ul class="attractions-list">
+            <li v-for="(attraction, index) in country.attractions" :key="index">
+              {{ attraction[locale] }}
+            </li>
+          </ul>
+        </div>
+      </template>
 
-        <h3>{{ t("countries.attractions") }}</h3>
-        <ul class="attractions-list">
-          <li v-for="(attraction, index) in country.attractions" :key="index">
-            {{ attraction[locale] }}
-          </li>
-        </ul>
-      </div>
+      <!-- Слот facts -->
+      <template #facts="{ activeTab }">
+        <div class="tab-content">
+          <div class="facts-grid">
+            <div class="fact-item">
+              <span class="fact-icon">🏛️</span>
+              <div class="fact-info">
+                <span class="fact-label">{{ t("country.capital") }}</span>
+                <span class="fact-value">{{ country.capital[locale] }}</span>
+              </div>
+            </div>
 
-      <!-- Facts -->
-      <div v-if="activeTab === 'facts'" class="tab-content">
-        <div class="facts-grid">
-          <div class="fact-item">
-            <span class="fact-icon">🏛️</span>
-            <div class="fact-info">
-              <span class="fact-label">{{ t("country.capital") }}</span>
-              <span class="fact-value">{{ country.capital[locale] }}</span>
+            <div class="fact-item">
+              <span class="fact-icon">👥</span>
+              <div class="fact-info">
+                <span class="fact-label">{{ t("country.population") }}</span>
+                <span class="fact-value">{{
+                  n(country.population, "decimal")
+                }}</span>
+              </div>
+            </div>
+
+            <div class="fact-item">
+              <span class="fact-icon">📏</span>
+              <div class="fact-info">
+                <span class="fact-label">{{ t("country.area") }}</span>
+                <span class="fact-value"
+                  >{{ n(country.area, "decimal") }} км²</span
+                >
+              </div>
+            </div>
+
+            <div class="fact-item">
+              <span class="fact-icon">💰</span>
+              <div class="fact-info">
+                <span class="fact-label">{{ t("country.gdp") }}</span>
+                <span class="fact-value">{{
+                  n(country.budget * 365, "currency")
+                }}</span>
+              </div>
+            </div>
+
+            <div class="fact-item">
+              <span class="fact-icon">🗣️</span>
+              <div class="fact-info">
+                <span class="fact-label">{{ t("country.language") }}</span>
+                <span class="fact-value">{{ country.language[locale] }}</span>
+              </div>
+            </div>
+
+            <div class="fact-item">
+              <span class="fact-icon">💵</span>
+              <div class="fact-info">
+                <span class="fact-label">{{ t("country.currency") }}</span>
+                <span class="fact-value">{{ country.currency }}</span>
+              </div>
             </div>
           </div>
+        </div>
+      </template>
 
-          <div class="fact-item">
-            <span class="fact-icon">👥</span>
-            <div class="fact-info">
-              <span class="fact-label">{{ t("country.population") }}</span>
-              <span class="fact-value">{{
-                n(country.population, "decimal")
+      <!-- Слот travel -->
+      <template #travel="{ activeTab }">
+        <div class="tab-content">
+          <div class="travel-info">
+            <div class="info-card">
+              <h3>📅 {{ t("countries.bestTime") }}</h3>
+              <p>{{ country.bestTime[locale] }}</p>
+            </div>
+
+            <div class="info-card">
+              <h3>💰 {{ t("countries.budget") }}</h3>
+              <p class="budget-value">{{ n(country.budget, "currency") }}</p>
+            </div>
+
+            <div class="info-card">
+              <h3>⭐ {{ t("countries.rating") }}</h3>
+              <p class="rating-value">{{ country.rating }} / 5.0</p>
+            </div>
+          </div>
+        </div>
+      </template>
+
+      <!-- Слот phrases -->
+      <template #phrases="{ activeTab }">
+        <div class="tab-content">
+          <div class="phrases-list">
+            <div class="phrase-item">
+              <span class="phrase-label">{{ t("phrases.hello") }}</span>
+              <span class="phrase-value">{{
+                country.phrases.hello[locale]
+              }}</span>
+            </div>
+
+            <div class="phrase-item">
+              <span class="phrase-label">{{ t("phrases.thankYou") }}</span>
+              <span class="phrase-value">{{
+                country.phrases.thankYou[locale]
+              }}</span>
+            </div>
+
+            <div class="phrase-item">
+              <span class="phrase-label">{{ t("phrases.goodbye") }}</span>
+              <span class="phrase-value">{{
+                country.phrases.goodbye[locale]
               }}</span>
             </div>
           </div>
-
-          <div class="fact-item">
-            <span class="fact-icon">📏</span>
-            <div class="fact-info">
-              <span class="fact-label">{{ t("country.area") }}</span>
-              <span class="fact-value"
-                >{{ n(country.area, "decimal") }} км²</span
-              >
-            </div>
-          </div>
-
-          <div class="fact-item">
-            <span class="fact-icon">💰</span>
-            <div class="fact-info">
-              <span class="fact-label">{{ t("country.gdp") }}</span>
-              <span class="fact-value">{{
-                n(country.budget * 365, "currency")
-              }}</span>
-            </div>
-          </div>
-
-          <div class="fact-item">
-            <span class="fact-icon">🗣️</span>
-            <div class="fact-info">
-              <span class="fact-label">{{ t("country.language") }}</span>
-              <span class="fact-value">{{ country.language[locale] }}</span>
-            </div>
-          </div>
-
-          <div class="fact-item">
-            <span class="fact-icon">💵</span>
-            <div class="fact-info">
-              <span class="fact-label">{{ t("country.currency") }}</span>
-              <span class="fact-value">{{ country.currency }}</span>
-            </div>
-          </div>
         </div>
-      </div>
-
-      <!-- Travel -->
-      <div v-if="activeTab === 'travel'" class="tab-content">
-        <div class="travel-info">
-          <div class="info-card">
-            <h3>📅 {{ t("countries.bestTime") }}</h3>
-            <p>{{ country.bestTime[locale] }}</p>
-          </div>
-
-          <div class="info-card">
-            <h3>💰 {{ t("countries.budget") }}</h3>
-            <p class="budget-value">{{ n(country.budget, "currency") }}</p>
-          </div>
-
-          <div class="info-card">
-            <h3>⭐ {{ t("countries.rating") }}</h3>
-            <p class="rating-value">{{ country.rating }} / 5.0</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Phrases -->
-      <div v-if="activeTab === 'phrases'" class="tab-content">
-        <div class="phrases-list">
-          <div class="phrase-item">
-            <span class="phrase-label">{{ t("phrases.hello") }}</span>
-            <span class="phrase-value">{{
-              country.phrases.hello[locale]
-            }}</span>
-          </div>
-
-          <div class="phrase-item">
-            <span class="phrase-label">{{ t("phrases.thankYou") }}</span>
-            <span class="phrase-value">{{
-              country.phrases.thankYou[locale]
-            }}</span>
-          </div>
-
-          <div class="phrase-item">
-            <span class="phrase-label">{{ t("phrases.goodbye") }}</span>
-            <span class="phrase-value">{{
-              country.phrases.goodbye[locale]
-            }}</span>
-          </div>
-        </div>
-      </div>
-    </div>
+      </template>
+    </Tabs>
   </div>
 
   <div v-else class="not-found">
@@ -174,16 +156,23 @@
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { computed } from "vue";
 import { useRoute } from "vue-router";
 import { useI18n } from "vue-i18n";
 import { getCountryById } from "../data/countries";
+import Tabs from "../components/base/Tabs.vue";
 
 const route = useRoute();
 const { t, n, locale } = useI18n();
 
 const country = computed(() => getCountryById(route.params.id));
-const activeTab = ref("overview");
+
+const tabsData = computed(() => [
+  { id: "overview", label: `📖 ${t("country.overview")}` },
+  { id: "facts", label: `📊 ${t("country.facts")}` },
+  { id: "travel", label: `✈️ ${t("country.travel")}` },
+  { id: "phrases", label: `💬 ${t("country.phrases")}` },
+]);
 </script>
 
 <style scoped>
@@ -235,46 +224,6 @@ const activeTab = ref("overview");
   font-size: 1.2rem;
   color: #ff9800;
   font-weight: 600;
-}
-
-.sub-nav {
-  display: flex;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
-  background: rgba(255, 255, 255, 0.95);
-  padding: 0.5rem;
-  border-radius: 15px;
-  flex-wrap: wrap;
-}
-
-.tab-btn {
-  padding: 0.75rem 1.5rem;
-  border: none;
-  background: transparent;
-  color: #666;
-  border-radius: 10px;
-  transition: all 0.3s;
-  font-weight: 500;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.tab-btn:hover {
-  background: #f0f0f0;
-  color: #667eea;
-}
-
-.tab-btn.active {
-  background: #667eea;
-  color: white;
-}
-
-.content {
-  background: rgba(255, 255, 255, 0.95);
-  padding: 2rem;
-  border-radius: 20px;
-  min-height: 400px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .tab-content {
